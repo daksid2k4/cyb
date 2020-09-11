@@ -17,7 +17,7 @@ void fibo(){
         f2[f1[i]]=true;
     }
 }
-
+// f1 để tính số fibo, số i mà là fibo thì gán f2[i] là true
 
 int main(){
     freopen("FIBO.inp", "r", stdin);
@@ -27,17 +27,20 @@ int main(){
     for (int i = 1; i<=n ; i++){
         cin >> a[i];
     }
+    // nhập xuất đầu bài
     for (int i = 1; i<= n ; i++){
         s[i]=s[i-1]+a[i];
     }
+    // tổng tích lũy
     for (int i = k; i<= n ; i++){
-//        cout << s[i]-s[i-k] << '\n';
         if (f2[s[i]-s[i-k]])
             res++;
     }
+    // nếu mà đoạn có k số đấy có tổng bằng số fibo thì res tăng 1
     if (!res)
         cout << "-1";
     else
         cout << res;
+    // in ra thôi :D
     return 0;
 }
